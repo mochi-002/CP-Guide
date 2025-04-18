@@ -9,6 +9,24 @@ bool isPowerOfTwo(int x) {
 }
 ```
 
+### Bit Manipulation Macros 
+```cpp
+// Check if i-th bit is ON (1-based from right)
+#define isON(n, i) (((n) >> (i)) & 1)
+
+// Check if i-th bit is OFF
+#define isOFF(n, i) (!(((n) >> (i)) & 1))
+
+// Set i-th bit ON (if it's not already)
+#define setON(n, i) ((n) |= (1 << (i)))
+
+// Set i-th bit OFF (if it's not already) 
+#define setOFF(n, i) ((n) &= ~(1 << (i)))
+
+// Toggle i-th bit (flip its state)
+#define toggle(n, i) ((n) ^= (1 << (i)))
+```
+
 ### Count set bits (Brian Kernighan’s Algorithm)
 ```cpp
 int countSetBits(int n) {
@@ -47,8 +65,8 @@ int gcd(int a, int b) {
 
 ### Sieve of Eratosthenes (Prime Numbers)
 ```cpp
-vector<bool> sieve(int n) {
-    vector<bool> is_prime(n+1, true);
+vector<short> sieve(int n) {
+    vector<short> is_prime(n+1, true);
     is_prime[0] = is_prime[1] = false;
     for (int i = 2; i*i <= n; i++) {
         if (is_prime[i]) {
@@ -58,6 +76,72 @@ vector<bool> sieve(int n) {
         }
     }
     return is_prime;
+}
+```
+
+### Smallest Prime Factor
+```cpp
+vector<short> SPF(int Num) {
+    vector<short> spf(Num + 1, 0);  
+    spf[0] = spf[1] = -1;               
+    for (int i = 2; i <= Num; i++) {
+        if (spf[i] != 0) continue; 
+        
+        spf[i] = i; 
+        for (int j = i * i; j <= Num; j += i) {
+            if (spf[j] == 0) spf[j] = i;
+        }
+    }
+    return spf;
+}
+```
+
+### Number OF Divisors
+```cpp
+vector<int> precomputeDivisors(int max_num) {
+    vector<int> divisors(max_num + 1, 1);
+    for (int i = 2; i <= max_num; i++) {
+        for (int j = i; j <= max_num; j += i) {
+            divisors[j]++;
+        }
+    }
+    return divisors;
+}
+```
+
+## Mod Space 
+### Addition
+```cpp
+int add(ll a, ll b)
+{
+    a %= mod;
+    b %= mod;
+    return(a + b + mod) % mod;
+}
+```
+
+### Fast Power
+```cpp
+int mult(ll a, ll b)
+{
+    return (a * b) % mod;
+}
+
+int fast_power(ll b, ll p)
+{
+    if (!p)
+        return 1;
+    int hp = fast_power(b, p >> 1);
+    hp = mult(hp, hp);
+    return (p&1 ? mult(hp, b) : hp);
+}
+```
+
+### Multi
+```cpp
+int mult(ll a, ll b)
+{
+    return (a * b) % mod;
 }
 ```
 
