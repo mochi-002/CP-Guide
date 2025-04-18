@@ -53,3 +53,31 @@ auto it = find_if(v.begin(), v.end(), [](int x){ return x > 5; });
 // Count occurrences
 int cnt = count(v.begin(), v.end(), x);
 ```
+
+### Some other STLs 
+```cpp
+// Ordered Set
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+
+template<typename T>
+using ordered_set = tree<T, null_type, less<T>, rb_tree_tag,
+                      tree_order_statistics_node_update>;
+
+/* 
+   Features:
+   - Insert/erase in O(log n)
+   - Find kth element in O(log n)
+   - Count elements < X in O(log n)
+*/
+```
+```cpp
+// Ordered Multi Set
+#include<ext/pb_ds/tree_policy.hpp>
+#include<ext/pb_ds/assoc_container.hpp>
+using namespace __gnu_pbds;
+template<typename T>
+using ordered_multiset = tree<T, null_type, less_equal<T>, rb_tree_tag,
+                           tree_order_statistics_node_update>;
+```
