@@ -1,4 +1,4 @@
-# CP Functions Cheatsheet
+# CP Guide: CP Functions Cheatsheet 🚀
 
 # Practical Tricks
 ## Bit Manipulation
