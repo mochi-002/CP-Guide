@@ -87,19 +87,32 @@ C(n,k) = C(n-1,k) + C(n-1,k-1);
 ## 📊 Summation Formulas
 ### Arithmetic Series
 ```cpp
+// normal one
 int sum_1_to_n(int n) {
     return n * (n + 1) / 2;
 }
-
+// Triangular Number Formula
+int triangular_number(int x, int y) {
+    int n = x - y;
+    return n * (n + 1) / 2;
+}
+```
+```cpp
 int sum_squares(int n) {
     return n * (n + 1) * (2 * n + 1) / 6;
+}
+```
+```cpp
+int sum_1_to_n(int n) {
+    return n * (n + 1) / 2;
 }
 
 int sum_cubes(int n) {
     int s = sum_1_to_n(n);
     return s * s;
 }
-
+```
+```cpp
 int sum_quadratic(int n, int a, int b, int c) {
     return a * sum_squares(n) + b * sum_1_to_n(n) + c * n;
 }
