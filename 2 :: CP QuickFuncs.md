@@ -112,22 +112,22 @@ vector<int> precomputeDivisors(int max_num) {
 ## Mod Space 
 ### Addition
 ```cpp
-int add(ll a, ll b)
+ll add(ll a, ll b)
 {
-    a %= mod;
-    b %= mod;
-    return(a + b + mod) % mod;
+    a %= MOD;
+    b %= MOD;
+    return(a + b + MOD) % MOD;
 }
 ```
 
 ### Fast Power
 ```cpp
-int mult(ll a, ll b)
+ll mult(ll a, ll b)
 {
-    return (a * b) % mod;
+    return (a * b) % MOD;
 }
 
-int fast_power(ll b, ll p)
+ll fast_power(ll b, ll p)
 {
     if (!p)
         return 1;
@@ -139,9 +139,9 @@ int fast_power(ll b, ll p)
 
 ### Multi
 ```cpp
-int mult(ll a, ll b)
+ll mult(ll a, ll b)
 {
-    return (a * b) % mod;
+    return (a * b) % MOD;
 }
 ```
 
