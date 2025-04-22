@@ -114,9 +114,7 @@ vector<int> precomputeDivisors(int max_num) {
 ```cpp
 ll add(ll a, ll b)
 {
-    a %= MOD;
-    b %= MOD;
-    return(a + b + MOD) % MOD;
+    return(a + b) % MOD;
 }
 ```
 
