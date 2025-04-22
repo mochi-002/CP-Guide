@@ -15,7 +15,7 @@ vector<double> quadratic(double a, double b, double c) {
     d = sqrt(d);
     return {(-b - d)/(2*a), (-b + d)/(2*a)};
 }
-
+```
 ## 🔢 Bitwise-Number Theory Hybrid
 ### Addition ↔ XOR Relationship
 ```cpp
