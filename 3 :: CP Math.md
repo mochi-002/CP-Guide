@@ -16,6 +16,12 @@ vector<double> quadratic(double a, double b, double c) {
     return {(-b - d)/(2*a), (-b + d)/(2*a)};
 }
 ```
+### Number of Distinct Even numbers till n
+```cpp
+long long nums (long long c) {
+    return ((c * c) / 4) + 1;
+}
+```
 ## 🔢 Bitwise-Number Theory Hybrid
 ### Addition ↔ XOR Relationship
 ```cpp
