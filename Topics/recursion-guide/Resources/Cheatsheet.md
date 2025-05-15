@@ -2,7 +2,6 @@
 
 A compact, go-to reference for algorithm patterns, complexities, and common formulas.
 
-````markdown
 # 🧾 Algorithms & DS Cheatsheet
 
 ## Time Complexities
@@ -23,7 +22,7 @@ void backtrack(params) {
         undoMove();
     }
 }
-````
+```
 
 ## Common Patterns
 
@@ -31,4 +30,4 @@ void backtrack(params) {
 * Two Pointers
 * Dynamic Programming: Memoization & Tabulation
 
-````
+
