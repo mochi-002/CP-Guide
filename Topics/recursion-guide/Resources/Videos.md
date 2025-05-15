@@ -1,5 +1,3 @@
-### 🎥 **Videos.md**
-Curate top YouTube playlists, lectures, or tutorials.
 
 # 🎥 Useful Video Resources
 
