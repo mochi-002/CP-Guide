@@ -1,6 +1,4 @@
-### 🧾 **Cheatsheet.md**
 
-A compact, go-to reference for algorithm patterns, complexities, and common formulas.
 
 # 🧾 Algorithms & DS Cheatsheet
 
