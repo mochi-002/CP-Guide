@@ -1,34 +1,27 @@
-# 🔍 Binary Search Algorithm
+# 🧩 Merge Sort Algorithm
 
-## ✅ Prerequisites
+## ⚙️ How It Works
 
-* The array must be **sorted** in ascending (or consistent) order.
-* Elements must be **comparable** (e.g., numbers, strings).
-
----
-
-## ⚙️ Algorithm Steps
-
-1. Initialize `low = 0`, `high = n - 1`.
-2. Compute mid-point:
-
-   ```cpp
-   mid = low + (high - low) / 2
-   ```
-3. If `arr[mid] == target`: return `mid`.
-4. If `target < arr[mid]`: search the **left half** (`high = mid - 1`).
-5. If `target > arr[mid]`: search the **right half** (`low = mid + 1`).
+1. **Divide**: Recursively split the array into two halves until each subarray contains a single element.
+2. **Conquer**: Recursively sort the subarrays.
+3. **Combine**: Merge the sorted subarrays to produce the final sorted array.
 
 ---
 
 ## 📊 Complexity Analysis
 
 ```math
-Time Complexity: O(log n)
-Space Complexity:
-- O(1) for Iterative version
-- O(log n) for Recursive version (due to call stack)
+Time Complexity: O(n log n)   // Best, Average, and Worst Cases
+Space Complexity: O(n)        // Auxiliary space for merging
 ```
+
+---
+
+## 🌟 Key Features
+
+* ✅ **Stable sort** — maintains relative order of equal elements
+* ✅ Efficient on **large datasets**
+* ✅ Easily **parallelizable**
 
 ---
 
@@ -37,22 +30,21 @@ Space Complexity:
 **Input**:
 
 ```cpp
-arr = [1, 3, 5, 7, 9]
-target = 5
+[38, 27, 43, 3, 9, 82, 10]
 ```
 
 **Output**:
 
 ```
-2  // Index of target (5)
+[3, 9, 10, 27, 38, 43, 82]
 ```
 
 ---
 
-## ⚠️ Edge Cases
+## ❓ When to Use?
 
-* 🔹 Empty array (`[]`)
-* 🔹 Target not found in array
-* 🔹 Array contains **duplicate elements**
+* When **stability** is important
+* Sorting **linked lists** (can be more space-efficient)
+* When working with **large datasets** where predictable performance is required
 
 ---

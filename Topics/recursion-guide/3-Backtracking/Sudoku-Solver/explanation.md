@@ -1,58 +1,60 @@
-# 🔍 Binary Search Algorithm
+# 🔢 Sudoku Solver
 
-## ✅ Prerequisites
+## 🧩 Problem Statement
 
-* The array must be **sorted** in ascending (or consistent) order.
-* Elements must be **comparable** (e.g., numbers, strings).
+Fill a **9×9** grid so that:
+
+* Each **row** contains digits 1–9 with no repetition.
+* Each **column** contains digits 1–9 with no repetition.
+* Each **3×3** subgrid contains digits 1–9 with no repetition.
 
 ---
 
-## ⚙️ Algorithm Steps
+## 🔁 Approach: Backtracking
 
-1. Initialize `low = 0`, `high = n - 1`.
-2. Compute mid-point:
+1. Find the **next empty cell** (`.` or `0`).
+2. Try placing digits **1–9**.
+3. If **valid**, place digit and **recurse**.
+4. If invalid or dead-end, **backtrack**.
 
-   ```cpp
-   mid = low + (high - low) / 2
-   ```
-3. If `arr[mid] == target`: return `mid`.
-4. If `target < arr[mid]`: search the **left half** (`high = mid - 1`).
-5. If `target > arr[mid]`: search the **right half** (`low = mid + 1`).
+---
+
+## 🛠️ Key Functions
+
+* `isValid(row, col, num)`: Checks row, column, and subgrid.
+* `solveSudoku()`: Recursively solves the puzzle using backtracking.
 
 ---
 
 ## 📊 Complexity Analysis
 
-```math
-Time Complexity: O(log n)
-Space Complexity:
-- O(1) for Iterative version
-- O(log n) for Recursive version (due to call stack)
+| Metric | Value  | Explanation                          |
+| ------ | ------ | ------------------------------------ |
+| Time   | O(9^m) | `m` = number of empty cells          |
+| Space  | O(1)   | In-place solution (no extra storage) |
+
+---
+
+## 🧪 Example Input
+
+```
+5 3 . | . 7 . | . . .
+6 . . | 1 9 5 | . . .
+. 9 8 | . . . | . 6 .
+------+-------+------
+8 . . | . 6 . | . . 3
+4 . . | 8 . 3 | . . 1
+7 . . | . 2 . | . . 6
+------+-------+------
+. 6 . | . . . | 2 8 .
+. . . | 4 1 9 | . . 5
+. . . | . 8 . | . 7 9
 ```
 
 ---
 
-## 🧪 Example
+## 🚀 Optimization Tips
 
-**Input**:
-
-```cpp
-arr = [1, 3, 5, 7, 9]
-target = 5
-```
-
-**Output**:
-
-```
-2  // Index of target (5)
-```
-
----
-
-## ⚠️ Edge Cases
-
-* 🔹 Empty array (`[]`)
-* 🔹 Target not found in array
-* 🔹 Array contains **duplicate elements**
-
----
+1. Use **MRV (Most Constrained Variable)** heuristic.
+2. Precompute **possible values** for each cell.
+3. Implement **Dancing Links (DLX)** for more advanced solving.

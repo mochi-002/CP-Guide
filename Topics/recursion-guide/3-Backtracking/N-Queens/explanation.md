@@ -1,58 +1,61 @@
-# 🔍 Binary Search Algorithm
+# 👑 N-Queens Problem
 
-## ✅ Prerequisites
+## 🧩 Problem Statement
 
-* The array must be **sorted** in ascending (or consistent) order.
-* Elements must be **comparable** (e.g., numbers, strings).
+Place **N** chess queens on an **N×N** board such that no two queens threaten each other (no two queens share the same row, column, or diagonal).
 
 ---
 
-## ⚙️ Algorithm Steps
+## 🔁 Approach: Backtracking
 
-1. Initialize `low = 0`, `high = n - 1`.
-2. Compute mid-point:
+1. Place queens **row by row**.
+2. For each row, try **all columns**.
+3. If it's **safe**, place the queen and **recurse** to the next row.
+4. If no safe position, **backtrack** and try a different configuration.
 
-   ```cpp
-   mid = low + (high - low) / 2
-   ```
-3. If `arr[mid] == target`: return `mid`.
-4. If `target < arr[mid]`: search the **left half** (`high = mid - 1`).
-5. If `target > arr[mid]`: search the **right half** (`low = mid + 1`).
+---
+
+## 🛠️ Key Functions
+
+* `isSafe(row, col)`: Checks for threats in column and both diagonals.
+* `solveNQueens(row)`: Main recursive function using backtracking.
 
 ---
 
 ## 📊 Complexity Analysis
 
-```math
-Time Complexity: O(log n)
-Space Complexity:
-- O(1) for Iterative version
-- O(log n) for Recursive version (due to call stack)
+| Metric | Value | Explanation                            |
+| ------ | ----- | -------------------------------------- |
+| Time   | O(N!) | N choices in row 1, N-1 in row 2, etc. |
+| Space  | O(N²) | To store the board configuration       |
+
+---
+
+## 🧪 Example (N = 4)
+
+**Solution 1:**
+
+```
+. Q . .
+. . . Q
+Q . . .
+. . Q .
+```
+
+**Solution 2:**
+
+```
+. . Q .
+Q . . .
+. . . Q
+. Q . .
 ```
 
 ---
 
-## 🧪 Example
+## 🚀 Optimization Tips
 
-**Input**:
-
-```cpp
-arr = [1, 3, 5, 7, 9]
-target = 5
-```
-
-**Output**:
-
-```
-2  // Index of target (5)
-```
-
----
-
-## ⚠️ Edge Cases
-
-* 🔹 Empty array (`[]`)
-* 🔹 Target not found in array
-* 🔹 Array contains **duplicate elements**
-
+1. Use **bitmasking** to track columns and diagonals.
+2. Exploit **symmetry** to reduce computation.
+3. Replace board with 1D array (e.g., `queens[row] = col`) to save space.
 ---
