@@ -22,20 +22,6 @@
 - **Level**: 🔴 Advanced
 - **Focus**: Competition style
 
-## Progress Tracker ✅
-
-| Sheet | Total | Solved | Status |
-|-------|--------|---------|---------|
-| Assiut | 20 | 0 | ⬜️ |
-| Practice | 10 | 0 | ⬜️ |
-| ACM Sheet | 15 | 0 | ⬜️ |
-| Contest | 8 | 0 | ⬜️ |
-
-### Status Legend
-- ⬜️ Not Started
-- 🟨 In Progress
-- ✅ Completed
-
 ### Tips for Solving ✨
 1. **Starting Point** 🎯
    - Identify the base case
